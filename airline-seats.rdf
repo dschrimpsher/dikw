@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:information="http://cablelabs.com/information/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <information:statistic rdf:about="http://cablelabs.com/information/meanWeight">
+    <information:mean rdf:datatype="http://www.w3.org/2001/XMLSchema#double">194.46</information:mean>
+    <information:stdDev rdf:datatype="http://www.w3.org/2001/XMLSchema#double">27.8394875432</information:stdDev>
+  </information:statistic>
+  <information:statistic rdf:about="http://cablelabs.com/information/meanHeight">
+    <information:stdDev rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.08649567561</information:stdDev>
+    <information:mean rdf:datatype="http://www.w3.org/2001/XMLSchema#double">68.7766666667</information:mean>
+  </information:statistic>
+  <information:range rdf:about="http://cablelabs.com/information/seats">
+    <information:minimum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</information:minimum>
+    <information:maximum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">240</information:maximum>
+  </information:range>
+</rdf:RDF>

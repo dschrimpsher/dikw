@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:data="http://cablelabs.com/data/"
+>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/DANIEL">
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">73.3</data:height>
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">197.1</data:weight>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/CHRISTOPHER">
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">190.8</data:weight>
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">63.5</data:height>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/DONALD">
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">72.6</data:height>
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">210.4</data:weight>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/STEVEN">
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">74.4</data:height>
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">132.8</data:weight>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/TIMOTHY">
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">163.9</data:weight>
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">64.9</data:height>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/BRIAN">
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">265.7</data:weight>
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">69.3</data:height>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/MATTHEW">
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">72.0</data:height>
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">233.6</data:weight>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/JEFFREY">
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">185.9</data:weight>
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">67.6</data:height>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/DAVID">
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">71.3</data:height>
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">175.1</data:weight>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/CHARLES">
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">217.6</data:weight>
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">66.1</data:height>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/ROBERT">
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">156.9</data:weight>
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">68.9</data:height>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/JOHN">
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">66.1</data:height>
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">215.3</data:weight>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/GEORGE">
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">73.1</data:height>
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">200.3</data:weight>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/MARK">
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">204.3</data:weight>
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">70.6</data:height>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/RONALD">
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">180.7</data:weight>
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">66.3</data:height>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/MICHAEL">
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">157.5</data:weight>
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">69.5</data:height>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/ANTHONY">
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">215.0</data:weight>
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">64.0</data:height>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/THOMAS">
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">66.0</data:height>
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">187.5</data:weight>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/GARY">
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">71.8</data:height>
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">208.8</data:weight>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/KEVIN">
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">67.2</data:height>
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">169.7</data:weight>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/JASON">
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">67.3</data:height>
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">173.3</data:weight>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/JOSEPH">
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">68.8</data:height>
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">252.5</data:weight>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/KENNETH">
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">190.3</data:weight>
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">66.8</data:height>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/FRANK">
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">69.2</data:height>
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">208.8</data:weight>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/JOSE">
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">69.5</data:height>
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">207.2</data:weight>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/WILLIAM">
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">69.1</data:height>
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">175.2</data:weight>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/RICHARD">
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">181.6</data:weight>
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">71.7</data:height>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/EDWARD">
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">168.3</data:weight>
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">62.3</data:height>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/JAMES">
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">214.6</data:weight>
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">72.5</data:height>
+  </foaf:person>
+  <foaf:person rdf:about="http://xmlns.com/foaf/0.1/PAUL">
+    <data:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">193.1</data:weight>
+    <data:height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">67.6</data:height>
+  </foaf:person>
+</rdf:RDF>
