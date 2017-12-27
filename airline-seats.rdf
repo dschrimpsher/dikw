@@ -2,17 +2,46 @@
 <rdf:RDF
   xmlns:information="http://cablelabs.com/information/"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
   <information:statistic rdf:about="http://cablelabs.com/information/meanWeight">
-    <information:mean rdf:datatype="http://www.w3.org/2001/XMLSchema#double">194.46</information:mean>
-    <information:stdDev rdf:datatype="http://www.w3.org/2001/XMLSchema#double">27.8394875432</information:stdDev>
+    <information:mean rdf:datatype="http://www.w3.org/2001/XMLSchema#float">194.46</information:mean>
+    <information:stdDev rdf:datatype="http://www.w3.org/2001/XMLSchema#float">27.8394875432</information:stdDev>
   </information:statistic>
+  <rdf:Property rdf:about="http://cablelabs.com/information/length">
+    <rdfs:domain rdf:resource="http://cablelabs.com/information/aircraft"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Property>
+  <information:aircraft rdf:about="http://cablelabs.com/information/e737">
+    <information:aircraftType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E737-800</information:aircraftType>
+    <information:length rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">129</information:length>
+    <information:maxLandingWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52700</information:maxLandingWeight>
+    <information:breakEvenLoadFactor rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</information:breakEvenLoadFactor>
+  </information:aircraft>
+  <rdf:Property rdf:about="http://cablelabs.com/information/mean">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="http://cablelabs.com/information/statistic"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://cablelabs.com/information/aircraftType">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://cablelabs.com/information/aircraft"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://cablelabs.com/information/maxLandingWeight">
+    <rdfs:domain rdf:resource="http://cablelabs.com/information/aircraft"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://cablelabs.com/information/stdDev">
+    <rdfs:domain rdf:resource="http://cablelabs.com/information/statistic"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Property>
   <information:statistic rdf:about="http://cablelabs.com/information/meanHeight">
-    <information:stdDev rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.08649567561</information:stdDev>
-    <information:mean rdf:datatype="http://www.w3.org/2001/XMLSchema#double">68.7766666667</information:mean>
+    <information:stdDev rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.08649567561</information:stdDev>
+    <information:mean rdf:datatype="http://www.w3.org/2001/XMLSchema#float">68.7766666667</information:mean>
   </information:statistic>
-  <information:range rdf:about="http://cablelabs.com/information/seats">
-    <information:minimum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</information:minimum>
-    <information:maximum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">240</information:maximum>
-  </information:range>
+  <rdf:Property rdf:about="http://cablelabs.com/information/breakEvenLoadFactor">
+    <rdfs:domain rdf:resource="http://cablelabs.com/information/aircraft"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Property>
+  <rdfs:Class rdf:about="http://cablelabs.com/information/aircraft"/>
+  <rdfs:Class rdf:about="http://cablelabs.com/information/statistic"/>
 </rdf:RDF>

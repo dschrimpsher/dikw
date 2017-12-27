@@ -1,9 +1,10 @@
 import rdflib
 from rdflib import Literal, Namespace
-from rdflib.namespace import FOAF, RDF
+from rdflib.namespace import FOAF, RDF, RDFS, XSD
 
 data = rdflib.Graph()
 information = rdflib.Graph()
+knowledge = rdflib.Graph()
 
 result = data.parse("airline-customers-data.rdf", format="xml")
 
@@ -14,6 +15,10 @@ data.bind("data", dataNS)
 informationNS = Namespace("http://cablelabs.com/information/")
 information.bind("information", informationNS)
 information.bind("foaf", FOAF)
+
+knowledgeNS = Namespace("http://cablelabs.com/knowledge/")
+knowledge.bind("knowledge", knowledgeNS)
+knowledge.bind("foaf", FOAF)
 
 sumX = 0.0
 sumW = 0.0
@@ -83,19 +88,86 @@ for s, p, o in data.triples((None, dataNS.weight, None)):
 varianceW = varianceW / count
 stddevW= varianceW ** 0.5
 
+information.add((informationNS.statistic, RDF.type, RDFS.Class))
+information.add((informationNS.mean, RDF.type, RDF.Property))
+information.add((informationNS.mean, RDFS.domain, informationNS.statistic))
+information.add((informationNS.mean, RDFS.range, XSD.float))
+
+information.add((informationNS.stdDev, RDF.type, RDF.Property))
+information.add((informationNS.stdDev, RDFS.domain, informationNS.statistic))
+information.add((informationNS.stdDev, RDFS.range, XSD.float))
+
 information.add((informationNS.meanHeight, RDF.type, informationNS.statistic))
-information.add((informationNS.meanHeight, informationNS.mean, Literal(average)))
-information.add((informationNS.meanHeight, informationNS.stdDev, Literal(stddev)))
+information.add((informationNS.meanHeight, informationNS.mean, Literal(average, datatype=XSD.float)))
+information.add((informationNS.meanHeight, informationNS.stdDev, Literal(stddev, datatype=XSD.float)))
 
 information.add((informationNS.meanWeight, RDF.type, informationNS.statistic))
-information.add((informationNS.meanWeight, informationNS.mean, Literal(averageW)))
-information.add((informationNS.meanWeight, informationNS.stdDev, Literal(stddevW)))
+information.add((informationNS.meanWeight, informationNS.mean, Literal(averageW, datatype=XSD.float)))
+information.add((informationNS.meanWeight, informationNS.stdDev, Literal(stddevW, datatype=XSD.float)))
 
 # canned information
-information.add((informationNS.seats, RDF.type, informationNS.range))
-information.add((informationNS.seats, informationNS.minimum, Literal(200)))
-information.add((informationNS.seats, informationNS.maximum, Literal(240)))
+information.add((informationNS.aircraft, RDF.type, RDFS.Class))
+
+information.add((informationNS.maxLandingWeight, RDF.type, RDF.Property))
+information.add((informationNS.maxLandingWeight, RDFS.domain, informationNS.aircraft))
+information.add((informationNS.maxLandingWeight, RDFS.range, XSD.integer))
+
+information.add((informationNS.breakEvenLoadFactor, RDF.type, RDF.Property))
+information.add((informationNS.breakEvenLoadFactor, RDFS.domain, informationNS.aircraft))
+information.add((informationNS.breakEvenLoadFactor, RDFS.range, XSD.integer))
+
+information.add((informationNS.length, RDF.type, RDF.Property))
+information.add((informationNS.length, RDFS.domain, informationNS.aircraft))
+information.add((informationNS.length, RDFS.range, XSD.integer))
+
+information.add((informationNS.aircraftType, RDF.type, RDF.Property))
+information.add((informationNS.aircraftType, RDFS.domain, informationNS.aircraft))
+information.add((informationNS.aircraftType, RDFS.range, XSD.string))
+
+information.add((informationNS.e737, RDF.type, informationNS.aircraft))
+information.add((informationNS.e737, informationNS.maxLandingWeight, Literal(52700, datatype=XSD.integer)))
+information.add((informationNS.e737, informationNS.breakEvenLoadFactor, Literal(120, datatype=XSD.integer)))
+information.add((informationNS.e737, informationNS.aircraftType, Literal('E737-800', datatype=XSD.string)))
+information.add((informationNS.e737, informationNS.length, Literal(129, datatype=XSD.integer)))
+
+
+minimumPassengers = int(information.value(informationNS.e737, informationNS.breakEvenLoadFactor))
+passengerWeightMean = float(information.value(informationNS.meanWeight, informationNS.mean))
+passengerWeightStdDev = float(information.value(informationNS.meanWeight, informationNS.stdDev))
+
+length = int(information.value(informationNS.e737, informationNS.length))
+
+knowledge.add((knowledgeNS.designDecision, RDF.type, RDFS.Class))
+knowledge.add((knowledgeNS.legRoom, RDF.type, knowledgeNS.designDecision))
+
+knowledge.add((knowledgeNS.maxLegRoom, RDF.type, RDF.Property))
+knowledge.add((knowledgeNS.maxLegRoom, RDFS.domain, knowledgeNS.designDecision))
+knowledge.add((knowledgeNS.maxLegRoom, RDFS.range, XSD.float))
+
+knowledge.add((knowledgeNS.minLegRoom, RDF.type, RDF.Property))
+knowledge.add((knowledgeNS.minLegRoom, RDFS.domain, knowledgeNS.designDecision))
+knowledge.add((knowledgeNS.minLegRoom, RDFS.range, XSD.float))
+
+chairSize = 2  # feet
+maxLegRoom = length / (minimumPassengers / 6) - chairSize # 6 seats wide
+
+knowledge.add((knowledgeNS.legRoom, knowledgeNS.maxLegRoom, Literal(maxLegRoom, datatype=XSD.integer)))
+
+maxLandingWeight = int(information.value(informationNS.e737, informationNS.maxLandingWeight))
+baggage = 25.0
+maxPassengers = int(maxLandingWeight / (baggage + passengerWeightMean))
+
+print maxLandingWeight
+print passengerWeightMean
+print maxPassengers
+
+minLegRoom = length / (maxPassengers / 6) - chairSize # 6 seats wide
+
+knowledge.add((knowledgeNS.legRoom, knowledgeNS.minLegRoom, Literal(minLegRoom, datatype=XSD.integer)))
+
 
 # Serialize the store as RDF/XML file
 information.serialize("airline-seats.rdf", format="pretty-xml", max_depth=3)
+knowledge.serialize("airline-design-decisions.rdf", format="pretty-xml", max_depth=3)
+
 # data.serialize("airline-customers-data.rdf", format="pretty-xml", max_depth=3)
